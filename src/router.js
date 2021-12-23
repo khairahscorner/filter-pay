@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import DataTable from './components/DataTable.vue';
+import DataTable from './views/DataTable.vue';
 
 Vue.use(Router);
 
