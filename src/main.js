@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 
+import './assets/css/index.css'
+
 // For API calls
 axios.defaults.baseURL = 'https://cornie-assessment.herokuapp.com'
 

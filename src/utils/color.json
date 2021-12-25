@@ -9,6 +9,7 @@
     "red_light": "#FFE0E0",
     "yellow_primary": "#965E00",
     "yellow_light": "#FFECCC",
-    "btn_primary": "#6D5BD0",
+    "purple": "#6D5BD0",
+    "grey": "#C6C2DE",
     "bg_primary": "#F4F2FF"
 }
