@@ -1,8 +1,7 @@
-import styled from 'vue-styled-components';
+import styled from "vue-styled-components";
 import * as colors from "../utils/color.json";
 import * as sizes from "../utils/dimension.json";
 // import {screens} from "../utils/sizes";
-
 
 export const TableWrapper = styled.table`
   width: 100%;
@@ -33,7 +32,7 @@ export const TableWrapper = styled.table`
     }
   }
   .thead-check {
-  } 
+  }
   .last-cell {
     display: flex;
     align-items: center;
@@ -53,7 +52,7 @@ export const TableWrapper = styled.table`
   }
   .activity-table {
     thead {
-      background-color: #F2F0F9;
+      background-color: #f2f0f9;
       th {
         &:last-child {
           flex-direction: row;
@@ -78,14 +77,14 @@ export const TableWrapper = styled.table`
   .activity-table-open {
     background-color: ${colors.bg_primary};
   }
-`
+`;
 const trProps = {
   paymentStatus: String,
-  userStatus: String
-}
-export const TableRow = styled('tr', trProps)`
+  userStatus: String,
+};
+export const TableRow = styled("tr", trProps)`
   height: 60px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-bottom: 1px solid ${colors.grey_light};
   td {
     margin: 15px 0;
@@ -98,7 +97,7 @@ export const TableRow = styled('tr', trProps)`
     .td-bold {
       font-weight: 500;
     }
-    .td-group {   
+    .td-group {
       margin-bottom: 5px;
       font-weight: 500;
     }
@@ -125,31 +124,53 @@ export const TableRow = styled('tr', trProps)`
   }
   .user {
     display: inline-block;
-    background: ${(props) => props.userStatus=='active' ? colors.blue_light : colors.bg_primary};
+    background: ${(props) =>
+      props.userStatus == "active" ? colors.blue_light : colors.bg_primary};
     padding: 2px 5px;
     border-radius: 10px;
     .dot {
-      background-color: ${(props) => props.userStatus=='active' ? colors.blue_primary : colors.black_secondary};
+      background-color: ${(props) =>
+        props.userStatus == "active"
+          ? colors.blue_primary
+          : colors.black_secondary};
     }
     .text {
-      color: ${(props) => props.userStatus=='active' ? colors.blue_primary : colors.black_secondary};
+      color: ${(props) =>
+        props.userStatus == "active"
+          ? colors.blue_primary
+          : colors.black_secondary};
     }
   }
   .payment {
     display: inline-block;
     padding: 2px 5px;
     border-radius: 10px;
-    background: ${(props) => props.paymentStatus=='paid' ? colors.green_light : props.paymentStatus=='unpaid' ? colors.red_light : colors.yellow_light};
+    background: ${(props) =>
+      props.paymentStatus == "paid"
+        ? colors.green_light
+        : props.paymentStatus == "unpaid"
+        ? colors.red_light
+        : colors.yellow_light};
     .dot {
-      background-color: ${(props) => props.paymentStatus=='paid' ? colors.green_primary : props.paymentStatus=='unpaid' ? colors.red_primary : colors.yellow_primary};
+      background-color: ${(props) =>
+        props.paymentStatus == "paid"
+          ? colors.green_primary
+          : props.paymentStatus == "unpaid"
+          ? colors.red_primary
+          : colors.yellow_primary};
     }
     .text {
-      color: ${(props) => props.paymentStatus=='paid' ? colors.green_primary : props.paymentStatus=='unpaid' ? colors.red_primary : colors.yellow_primary};
+      color: ${(props) =>
+        props.paymentStatus == "paid"
+          ? colors.green_primary
+          : props.paymentStatus == "unpaid"
+          ? colors.red_primary
+          : colors.yellow_primary};
     }
   }
-    .span {
-      text-transform: capitalize;
-    }
+  .span {
+    text-transform: capitalize;
+  }
   .icon {
     width: 15px;
     height: 15px;

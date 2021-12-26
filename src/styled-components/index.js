@@ -1,76 +1,76 @@
-// Styled component wrappers 
-import styled, {keyframes} from 'vue-styled-components';
+// Styled component wrappers
+import styled, { keyframes } from "vue-styled-components";
 import * as colors from "../utils/color.json";
 import * as sizes from "../utils/dimension.json";
-import {screens} from "../utils/sizes";
+import { screens } from "../utils/sizes";
 
 //Page loader style
 export const PreloaderWrapper = styled.div`
-    width: 100%;
-    height: 100vh;
-    background-color: #F4F2FF;
-    position: relative;
-`
+  width: 100%;
+  height: 100vh;
+  background-color: #f4f2ff;
+  position: relative;
+`;
 //loading indicator
 const dot1 = keyframes`
     0% { transform: scale(0) }
     100% { transform: scale(1) }
-`
+`;
 const dot2 = keyframes`
     0% { transform: translate(0, 0) }
     100% { transform: translate(16px, 0) }
-`
+`;
 const dot3 = keyframes`
     0% { transform: scale(1) }
     100% { transform: scale(0) }
-`
+`;
 export const LoadingWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .wrapper {
+    width: 0;
+    display: flex;
+    align-items: center;
     position: relative;
-    width: 100%;
-    height: 100%;
-    .wrapper {
-            width: 0;
-            display: flex;
-            align-items: center;
-            position: relative;
-            top: 50%;
-            left: 50%;
-            transform: translateX(50%);
-            .dot { 
-                position: absolute;
-                top: -5px;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: ${colors.purple};
-                animation-timing-function: cubic-bezier(0, 1, 1, 0);
-                &:nth-child(1) {
-                    left: -20px;
-                    animation: ${dot1} 0.6s infinite;
-                }
-                &:nth-child(2) {
-                    left: -20px;
-                    animation: ${dot2} 0.6s infinite;
-                }
-                &:nth-child(3) {
-                    left: -4px;
-                    animation: ${dot2} 0.6s infinite;
-                }
-                &:nth-child(4) {
-                    left: 12px;
-                    animation: ${dot3} 0.6s infinite;
-                }
-            }
-    }
-    .details {
+    top: 50%;
+    left: 50%;
+    transform: translateX(50%);
+    .dot {
       position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 10px;
-      color: ${colors.purple};
-      text-transform: uppercase;
+      top: -5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: ${colors.purple};
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+      &:nth-child(1) {
+        left: -20px;
+        animation: ${dot1} 0.6s infinite;
+      }
+      &:nth-child(2) {
+        left: -20px;
+        animation: ${dot2} 0.6s infinite;
+      }
+      &:nth-child(3) {
+        left: -4px;
+        animation: ${dot2} 0.6s infinite;
+      }
+      &:nth-child(4) {
+        left: 12px;
+        animation: ${dot3} 0.6s infinite;
+      }
     }
+  }
+  .details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    color: ${colors.purple};
+    text-transform: uppercase;
+  }
 `;
 
 export const MainWrapper = styled.main`
@@ -110,25 +110,25 @@ export const MainWrapper = styled.main`
     padding: 50px;
   }
 }
-`
-// Button 
+`;
+// Button
 export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-//   width: 99px;
-//   height: 39px;
+  //   width: 99px;
+  //   height: 39px;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid transparent;
   font-size: ${sizes.text_16};
   line-height: 19px;
   text-transform: capitalize;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   outline: none;
-  background-color: ${colors.purple}; 
-  transition: box-shadow .2s ease-in;
+  background-color: ${colors.purple};
+  transition: box-shadow 0.2s ease-in;
   &:hover {
     box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.05);
   }
@@ -138,46 +138,46 @@ export const StyledButton = styled.button`
 `;
 
 export const PageHeader = styled.header`
-    .tab-nav {
-        border-bottom: 1px solid ${colors.grey};
-        margin: 20px 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .tabs-group {      
-        display: flex;
-        align-items: center;
-        .tab {
-            height: 100%;
-            color: ${colors.black_secondary};
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            transition: border-bottom .2s ease;
-            border-bottom: 2px solid transparent;
-            &:hover {
-              border-bottom: 2px solid ${colors.black_primary};
-            }
-        }    
-      @media ${screens.mobile} {
-        width: 100%;
+  .tab-nav {
+    border-bottom: 1px solid ${colors.grey};
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tabs-group {
+    display: flex;
+    align-items: center;
+    .tab {
+      height: 100%;
+      color: ${colors.black_secondary};
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      transition: border-bottom 0.2s ease;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        border-bottom: 2px solid ${colors.black_primary};
       }
     }
-    .head-text {
-        font-size: ${sizes.text_14};
-        font-weight: 700;
-        line-height: 17px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: ${colors.black_secondary}
+    @media ${screens.mobile} {
+      width: 100%;
     }
-`
+  }
+  .head-text {
+    font-size: ${sizes.text_14};
+    font-weight: 700;
+    line-height: 17px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: ${colors.black_secondary};
+  }
+`;
 //card
 export const CardWrapper = styled.div`
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   width: 100%;
@@ -196,9 +196,9 @@ export const CardWrapper = styled.div`
       width: 100%;
       margin-bottom: 20px;
     }
-  } 
-`
-//select 
+  }
+`;
+//select
 export const SelectWrapper = styled.div`
   width: 88px;
   .custom-select {
@@ -218,6 +218,9 @@ export const SelectWrapper = styled.div`
     &:focus {
       border: 1px solid ${colors.purple};
     }
+    @media ${screens.mobile} {
+      font-size: ${sizes.text_14};
+    }
   }
   .select-icon {
     width: 20px;
@@ -231,7 +234,7 @@ export const SelectWrapper = styled.div`
     width: 224px;
     min-width: 135px;
     padding: 20px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border: 1px solid ${colors.grey};
     border-radius: 6px;
     box-sizing: border-box;
@@ -246,9 +249,9 @@ export const SelectWrapper = styled.div`
     }
   }
   .sort-group {
-    border-bottom: 1px solid #F2F0F9;
+    border-bottom: 1px solid #f2f0f9;
   }
-`
+`;
 export const SearchWrapper = styled.div`
   width: 392px;
   .search-box {
@@ -268,7 +271,7 @@ export const SearchWrapper = styled.div`
     border: transparent;
     border-radius: 6px;
     background-color: ${colors.bg_primary};
-    padding: 0 40px; 
+    padding: 0 40px;
     height: 40px;
     font-size: ${sizes.text_12};
     line-height: 15px;
@@ -284,7 +287,7 @@ export const SearchWrapper = styled.div`
   @media ${screens.mobile} {
     width: 100%;
   }
-`
+`;
 
 export const PaginationWrapper = styled.div`
   padding: 0 15px;
@@ -314,8 +317,8 @@ export const PaginationWrapper = styled.div`
     align-items: center;
     justify-content: center;
   }
-  .next  {
+  .next {
     margin-left: 50px;
     transform: rotate(180deg);
   }
-`
+`;

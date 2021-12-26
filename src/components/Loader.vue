@@ -1,18 +1,17 @@
 <template>
-    <preloader-wrapper>
-        <loading-indicator />
-    </preloader-wrapper>
+  <preloader-wrapper>
+    <loading-indicator />
+  </preloader-wrapper>
 </template>
 
 <script>
-import {PreloaderWrapper} from '../styled-components/index'
-import LoadingIndicator from './LoadingIndicator.vue'
+import { PreloaderWrapper } from "../styled-components/index";
+import LoadingIndicator from "./LoadingIndicator.vue";
 
 export default {
-
-    components: {
-        PreloaderWrapper,
-        LoadingIndicator
-    }
-}
+  components: {
+    PreloaderWrapper,
+    LoadingIndicator,
+  },
+};
 </script>

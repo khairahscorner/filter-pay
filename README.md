@@ -35,17 +35,29 @@ CANDIDATE_ID=your-id
 |   
 ├─ src/
 │  ├─ assets/     # Assets
+│  │  ├─ css      # global style file
 │  │  └─ icons/    # Icons used   
 │  │
-│  ├─ components/        # components
-│  │  ├─ axios.js       # 
-│  │  ├─ index.js       # 
-│  │  └─ index.json   
+│  ├─ components/               # components
+│  │  ├─ icons/                 # icon components
+│  │  │  ├─ ArrowIcon.vue
+│  │  │  ├─ DropdownIcon.vue
+│  │  │  ├─ FilterIcon.vue
+│  │  │  ├─ MoreIcon.vue
+│  │  │  └─ SearchIcon.vue
+│  │  │        
+│  │  ├─ BaseButton.vue         
+│  │  ├─ CheckButton.vue         
+│  │  ├─ FilterSelect.vue        
+│  │  ├─ Loader.vue         
+│  │  ├─ LoadingIndicator.vue         
+│  │  ├─ RadioButtons.vue       
+│  │  ├─ SearchBox.vue        
+│  │  └─ TableCard.vue           
 │  │
 │  ├─ styled-components/  #components using styled-components
-│  │  ├─ axios.js       # 
-│  │  ├─ index.js       # 
-│  │  └─ index.json       # 
+│  │  ├─ index.js       
+│  │  └─ table.js       
 │  │
 │  ├─ utils/                # General theming
 │  │  ├─ color.json         # Colors
@@ -53,7 +65,7 @@ CANDIDATE_ID=your-id
 │  │  └─ sizes.js           # Screen sizes (not used)
 │  │
 │  ├─ views/                    # Main pages
-│  │  └─ DataTable.js            # Table
+│  │  └─ DataTable.js            # Page view
 │  │
 │  ├─ App.vue         # Main app file	    
 │  ├─ main.js         # App config
