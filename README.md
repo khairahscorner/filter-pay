@@ -5,12 +5,12 @@
 - [Installation](#installation)
 - [Design](#design)
 - [Technologies](#technologies)
-- [Reuseables](#reuseables)
 
 ## Installation
 
 #### Setup
 
+> With Yarn
 ```
 $ yarn install
 $ yarn serve
