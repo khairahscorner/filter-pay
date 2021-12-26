@@ -6,13 +6,17 @@
                 <div class="dot"></div>
                 <div class="dot"></div>
             </div>
+            <div class="details" v-if="response">{{response}}</div>
     </loading-wrapper>
 </template>
 
 <script>
 import {LoadingWrapper} from '../styled-components/index'
 
-export default {    
+export default { 
+    props: {
+        response: String
+    }, 
     components: {
         LoadingWrapper
     }

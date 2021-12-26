@@ -2,7 +2,7 @@
   <div class="radio-btns">
     <label v-for="option in options" :key="option.val" class="radio">
           <span class="radio__label">{{option.label}}</span>
-          <span :ref="option.val" class="radio__input" >
+          <span class="radio__input" >
           <input :id="option.val" class="radio__btn" type="radio" name="radio" @click="selectOption(option.val)"/>
           <span class="radio__control"></span>
           </span>

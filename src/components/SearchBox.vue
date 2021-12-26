@@ -4,7 +4,8 @@
             <div class="search-box">
                 <SearchIcon />
                 <input 
-                    placeholder="Search Users by Name, Email or Date"
+                    @keyup="$emit('perform-search', searchValue)"
+                    placeholder="Search Users by Name, Email or Payment Date"
                     type="text"
                     v-model="searchValue"
                 />    
@@ -34,5 +35,10 @@ export default {
 .wrapper {
     display: flex;
     align-items: center;
+}
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+    }
 }
 </style>

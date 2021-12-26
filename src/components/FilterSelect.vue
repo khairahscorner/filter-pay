@@ -10,10 +10,10 @@
                         Filter
                     </div>
                     <div v-if="isOpen">
-                        <div class="options">
+                        <div class="dropdown">
                             <div class="sort-group">
                                 <p>sort by:</p>
-                                <radio-buttons :options="options" :defaultOption="selectedOption" @option-selected="sortBySelected" />
+                                <radio-buttons :options="options" :defaultOption="selectedFilter" @option-selected="sortBySelected" />
                             </div>
                             <div></div>
                         </div>
@@ -31,10 +31,12 @@ import FilterIcon from './icons/FilterIcon.vue'
 import RadioButtons from '../components/RadioButtons.vue'
 
 export default {
+    props: {
+        selectedFilter: String
+    },
     data() {
         return {
             isOpen: false,
-            selectedOption: 'none',
             options: [
                 {label: 'Default', val: 'none'},
                 {label: 'First Name', val: 'fname'},
@@ -45,8 +47,7 @@ export default {
     },
     methods: {
         sortBySelected(sortVal) {
-            console.log(sortVal)
-            this.selectedOption = sortVal
+            this.$emit('sort-data', sortVal)
             this.isOpen = false
         },
         closeSelect (e) {
