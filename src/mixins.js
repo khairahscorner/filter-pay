@@ -7,7 +7,7 @@ export const formatMixin = {
       return moment(val).format("DD/MMM/YYYY").toUpperCase();
     },
   },
-};
+}; 
 
 const allMixins = {
   // data() {
