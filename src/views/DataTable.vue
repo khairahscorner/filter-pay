@@ -3,7 +3,7 @@
     <pre-loader v-if="loading" />
     <main-wrapper v-else>
       <page-header>
-        <h1 class="head-text">Table header</h1>
+        <h1 class="head-text">Filter Pay</h1>
         <div class="tab-nav">
           <div class="text-14 tabs-group">
             <div
@@ -107,8 +107,8 @@ import {
 } from "../styled-components/index";
 
 import { black_primary } from "../utils/color.json";
-import axios from "axios";
 import allMixins from "../mixins";
+import { mockData } from '../mock';
 
 export default {
   name: "DataTable",
@@ -160,23 +160,21 @@ export default {
   },
   methods: {
     getData() {
-      axios
-        .get(`/users/${this.candidateId}`)
-        .then((res) => {
-          this.totalAmount = 0; //reset total amount
+      setTimeout(() => {
+        this.totalAmount = 0; //reset total amount
           this.currentCheckIndex = null; //reset checked user index
-          this.usersData = res.data.data;
+          this.usersData = mockData;
           //if mark user paid request occured
           if (this.requestDetails.loading) {
             this.switchTab(this.activeTab);
           }
           //if first time loading the table
           else {
-            this.currentTableData = res.data.data;
-            this.filteredByTabTableData = res.data.data;
+            this.currentTableData = mockData;
+            this.filteredByTabTableData = mockData;
           }
           // calculate payable amount
-          res.data.data.forEach((user) => {
+          mockData.forEach((user) => {
             if (
               user.paymentStatus == "unpaid" ||
               user.paymentStatus == "overdue"
@@ -185,16 +183,12 @@ export default {
             }
           });
           //pagination
-          this.tableMeta = this.setTableMeta(res.data.data);
+          this.tableMeta = this.setTableMeta(mockData);
           setTimeout(() => {
             this.loading = false;
             this.requestDetails.loading = false;
           }, 1000);
-        })
-        .catch(() => {
-          this.loading = false;
-          this.tableError = true;
-        });
+      }, 1000);
     },
     saveCheckedUser(checkIndex, payload) {
       this.checkedUser = payload;
@@ -205,19 +199,11 @@ export default {
         //perform request only if payment status is unpaid
         this.requestDetails.loading = true;
         this.requestDetails.response = "Performing request...";
-        axios
-          .patch(`/mark-paid/${this.checkedUser.id}`)
-          .then(() => {
+        setTimeout(() => {
             this.checkedUser = null;
-            this.requestDetails.response = "Successful! Now Reloading Data...";
-            setTimeout(() => {
-              //refresh table
-              this.getData();
-            }, 3000);
-          })
-          .catch(() => {
-            this.tableError = true;
-          });
+            this.requestDetails.response = "Successful! Now Reloading Data... (Note: No action takes place)";
+            this.getData();
+          }, 1000);
       }
     },
     //uses mixin method sortByValue

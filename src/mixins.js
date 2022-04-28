@@ -10,11 +10,11 @@ export const formatMixin = {
 };
 
 const allMixins = {
-  data() {
-    return {
-      candidateId: process.env.VUE_APP_CANDIDATE_ID,
-    };
-  },
+  // data() {
+  //   return {
+  //     candidateId: process.env.VUE_APP_CANDIDATE_ID,
+  //   };
+  // },
   methods: {
     filterByTab(tab, data) {
       if (tab === "all") {

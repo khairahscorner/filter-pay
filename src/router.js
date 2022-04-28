@@ -12,13 +12,13 @@ const router = new Router({
       name: "tables",
       path: "/",
       component: DataTable,
-      meta: { title: "DataTable" },
+      meta: { title: "Home" },
     },
     { path: "*", redirect: "/" },
   ],
 });
 
-const DEFAULT_TITLE = "Scelloo Test";
+const DEFAULT_TITLE = "Filter Pay";
 
 router.afterEach((to) => {
   document.title = `${to.meta.title} - ${DEFAULT_TITLE}`;

@@ -44,7 +44,7 @@
               </td>
               <td>
                 <div class="text-14 td-primary td-group">
-                  {{ user.firstName }} {{ user.lastName }}
+                  {{ user.name }}
                 </div>
                 <div class="text-14 td-secondary spaced">{{ user.email }}</div>
               </td>
@@ -80,9 +80,8 @@
                 </div>
                 <div class="text-12 td-secondary spaced">USD</div>
               </td>
-              <td>
-                <div class="last-cell">
-                  <span class="text-12 td-secondary">View more</span>
+              <td class="align-right icon" @click="toggleVisible(i)">
+                <div class="text-14 td-group td-primary">
                   <more-icon />
                 </div>
               </td>
